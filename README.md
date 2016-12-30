@@ -1,2 +1,2 @@
-# VBATwilio
-Using the [Twilio API](https://www.twilio.com/docs/api/rest/sending-messages) to send an SMS from VBA (Microsoft Access)
+# VBAEZTexting
+Using the [EZTexting Legacy API](https://www.eztexting.com/developers/sms-api-documentation/http) to send an SMS message from VBA (Microsoft Access)
