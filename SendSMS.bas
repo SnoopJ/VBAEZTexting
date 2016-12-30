@@ -34,6 +34,7 @@ Public Function SendSMS(ByVal MessageDest, ByVal MessageSubject, ByVal MessageBo
     Dim AccountPassword
     Dim objFSO, objFile
     Dim postParams
+    Dim res, code
     
     Set objFSO = CreateObject("Scripting.FileSystemObject")
 
@@ -69,6 +70,13 @@ Public Function SendSMS(ByVal MessageDest, ByVal MessageSubject, ByVal MessageBo
 
     ' xhr.responseText now holds the response as a string.
     res = xhr.responseText
+    code = xhr.Status
+
+    If code <> 200 Then
+        MsgBox("Server replied with status code " & code)
+        SendSMS = code
+        Exit Function
+    End If
 
     If res = "-1" Then
         MsgBox("Authentication problem, or API access not allowed")
